@@ -16,8 +16,12 @@ class AppRouter {
   AppRouter(this.loginCubit);
 
   late final GoRouter router = GoRouter(
+    routerNeglect: true,
     errorBuilder: (context, state) => ErrorScreen(error: state.error),
     debugLogDiagnostics: true,
+
+    // initialLocation: (loginCubit.state.status == AuthStatus.unAuthenticated) ? '/' : '/login',
+
     routes: <GoRoute>[
       // top-lebel- route
       GoRoute(
@@ -65,6 +69,7 @@ class AppRouter {
       //   },
       // ),
     ],
+
     redirect: (BuildContext context, GoRouterState state) {
       // Check if the user is logged in.
       final bool loggedIn = loginCubit.state.status == AuthStatus.authenticated;
@@ -80,6 +85,7 @@ class AppRouter {
       }
       return null;
     },
+
     refreshListenable: GoRouterRefreshSteram(loginCubit.stream),
   );
 }

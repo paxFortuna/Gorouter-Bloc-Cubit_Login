@@ -29,6 +29,7 @@ class ProductListScreen extends StatelessWidget {
       appBar: AppBar(
         // title: const Text('Product List'),
         title: Text(category),
+        centerTitle: true,
         backgroundColor: const Color(0xFF0000A1F),
         actions: [
           IconButton(

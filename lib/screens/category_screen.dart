@@ -16,6 +16,7 @@ class CategoryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Categories'),
+        centerTitle: true,
         backgroundColor: const Color(0xFF0000A1F),
         actions: [
           IconButton(
@@ -35,6 +36,8 @@ class CategoryScreen extends StatelessWidget {
               title: Text(category.name),
               onTap: () {
                 return context.go(
+                // push로 라우팅하면, 백워드는 직전 상태로 간다
+                // return context.push(
                   // 'path:/product_list' 대신 'name:product_list' 성능 유리
                   context.namedLocation(
                     'product_list',

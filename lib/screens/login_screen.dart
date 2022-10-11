@@ -12,6 +12,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login'),
+        centerTitle: true,
         backgroundColor: const Color(0xFF0000A1F),
       ),
       body: Center(
