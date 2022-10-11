@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../cubits/login_cubit.dart';
 import '../screens/category_screen.dart';
+import '../screens/error_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/login_screen.dart';
 import '../screens/product_list_screen.dart';
@@ -15,6 +16,7 @@ class AppRouter {
   AppRouter(this.loginCubit);
 
   late final GoRouter router = GoRouter(
+    errorBuilder: (context, state) => ErrorScreen(error: state.error),
     debugLogDiagnostics: true,
     routes: <GoRoute>[
       // top-lebel- route
@@ -53,7 +55,6 @@ class AppRouter {
               );
             },
           ),
-
         ],
       ),
       // top-lebel-route

@@ -5,6 +5,6 @@ class Category {
 
   static List<Category> categories = [
     Category(name: 'Clothes'),
-    Category(name: 'Fodd'),
+    Category(name: 'Food'),
   ];
 }
